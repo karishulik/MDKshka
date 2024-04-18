@@ -1,13 +1,14 @@
 #include <stdio.h>
 
-#include "askname.h"
-
 int main(int argc, char **argv)
 {
-    char first[255], last[255];
+	char name[255];
 
-    askname(first, last);
+    printf("Enter ypur name: ");
+	fgets(name, 255, stdin);
+    name[strlen(name)-1] = '\0'; /* remove the newline at the end */
 
-    printf("Hello, %s %s!\n", first, last);
+    printf("Hello, %s!\n", name);
+
     return 0;
 }
